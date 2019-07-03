@@ -15,7 +15,7 @@ class User extends Authenticatable
     const IS_NORMAL = 0;
     const IS_BANNED = 0;
     const IS_ACTIVE = 1;
-    const PATH_AVATAR_IMAGE = 'img/avatar/';
+    const PATH_AVATAR_IMAGE = 'img/avatar';
     const AVATAR_DEFAULT = 'no-user-image.jpg';
 
     protected $fillable = [
@@ -25,6 +25,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $avatar;
+
+    protected $is_admin;
+
+    protected $status;
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+    }
 
     public function posts()
     {
@@ -74,26 +85,26 @@ class User extends Authenticatable
 
         $filename = str_random(10) . '.' . $image->extension();
         $image->storeAs(User::PATH_AVATAR_IMAGE, $filename);
-        $this->avatar = $filename;
+        $this->attributes['avatar'] = $filename;
         $this->save();
     }
 
     public function removeAvatar()
     {
-        if($this->avatar != null)
+        if( $this->getAttribute('avatar') != null )
         {
-            Storage::delete(User::PATH_AVATAR_IMAGE . $this->avatar);
+            Storage::delete(User::PATH_AVATAR_IMAGE.'/'.$this->getAttribute('avatar'));
         }
     }
 
     public function getImage()
     {
-        if($this->avatar == null)
+        if($this->getAttribute('avatar') == null)
         {
-            return User::PATH_AVATAR_IMAGE . User::AVATAR_DEFAULT;
+            return User::PATH_AVATAR_IMAGE.'/'.User::AVATAR_DEFAULT;
         }
 
-        return User::PATH_AVATAR_IMAGE . $this->avatar;
+        return User::PATH_AVATAR_IMAGE.'/'.$this->getAttribute('avatar');
     }
 
     public function makeAdmin()
@@ -139,8 +150,6 @@ class User extends Authenticatable
 
         return $this->ban();
     }
-
-
 }
 
 
