@@ -8,8 +8,9 @@
 
     <title>Blog</title>
 
-    <link rel="stylesheet" href="/css/front.css">
-    <link rel="icon" type="image/png" href="/img/front/favicon.png">
+    <link rel="stylesheet" href="{{ asset('css/front.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/front/favicon.png') }}">
 
 </head>
 

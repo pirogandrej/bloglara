@@ -15,6 +15,12 @@ $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
 
+//This is code need for work with folder public_html
+//if use folder public then this is code can not used
+$app->bind('path.public', function () {
+    return base_path("public_html");
+});
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
