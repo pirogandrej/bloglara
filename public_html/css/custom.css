@@ -5,3 +5,7 @@
 .post-content {
     word-wrap: break-word;
 }
+
+pre code {
+    white-space: unset;
+}
