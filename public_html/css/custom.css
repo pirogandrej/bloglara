@@ -1,0 +1,7 @@
+.entry-header h1 a {
+    display: block;
+}
+
+.post-content {
+    word-wrap: break-word;
+}
