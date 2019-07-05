@@ -10,7 +10,14 @@
                     @foreach($posts as $post)
                         <article class="post">
                             <div class="post-thumb">
-                                <a href="{{route('post.show', $post->slug)}}"><img src="{{$post->getImage()}}" alt=""></a>
+
+                                <a href="{{route('post.show', $post->slug)}}">
+                                    <div
+                                        class="post-image"
+                                        style="background: url('{{$post->getImage()}}');background-size: cover;">
+                                    </div>
+                                </a>
+                                {{--<a href="{{route('post.show', $post->slug)}}"><img src="{{$post->getImage()}}" alt=""></a>--}}
 
                                 <a href="{{route('post.show', $post->slug)}}" class="post-thumb-overlay text-center">
                                     <div class="text-uppercase text-center">View Post</div>
