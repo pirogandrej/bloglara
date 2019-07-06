@@ -2,7 +2,7 @@
     <div class="primary-sidebar">
 
         <aside class="widget news-letter">
-            <h3 class="widget-title text-uppercase text-center">Get Newsletter</h3>
+            <h3 class="widget-title text-uppercase text-center">Подписаться</h3>
             @include('admin.errors')
             <form action="/subscribe" method="post">
                {{csrf_field()}}
@@ -58,7 +58,7 @@
                             <img src="{{$post->getImage()}}" alt="">
                             <a href="{{route('post.show', $post->slug)}}" class="overlay-text text-center">
                                 <h5 class="text-uppercase">{{$post->title}}</h5>
-                                <p>{!!$post->description!!}</p>
+                                {{--<p>{!!$post->description!!}</p>--}}
                             </a>
                         </div>
                     </div>
