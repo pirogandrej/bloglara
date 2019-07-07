@@ -1,4 +1,5 @@
-<div class="col-md-4" data-sticky_column>
+{{--<div class="col-md-4" data-sticky_column>--}}
+<div class="col-md-4">
     <div class="primary-sidebar">
 
         <aside class="widget news-letter">
