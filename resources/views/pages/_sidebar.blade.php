@@ -1,4 +1,3 @@
-{{--<div class="col-md-4" data-sticky_column>--}}
 <div class="col-md-4">
     <div class="primary-sidebar">
 
@@ -14,7 +13,7 @@
             </form>
         </aside>
 
-        <aside class="widget border pos-padding">
+        <aside class="widget categories border pos-padding">
             <h3 class="widget-title text-uppercase text-center">Категории</h3>
             <ul>
                 @foreach($categories as $category)

@@ -5,32 +5,43 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-8">
+                <div class="col-md-8 posts">
+
+                    <aside class="widget categories border pos-padding">
+                        <h3 class="widget-title text-uppercase text-center">Категории</h3>
+                        <ul>
+                            @foreach($categories as $category)
+                                <li>
+                                    <a href="{{route('category.show', $category->slug)}}">
+                                        {{$category->title}}
+                                    </a>
+                                    <span class="post-count pull-right">
+                                        ({{$category->posts()->count()}})
+                                    </span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </aside>
+
 
                     @foreach($posts as $post)
                         <article class="post">
                             <div class="post-thumb">
 
-                                <a href="{{route('post.show', $post->slug)}}">
-                                    <div
-                                        class="post-image"
-                                        style="background: url('{{$post->getImage()}}');background-size: cover;">
-                                    </div>
-                                </a>
-                                {{--<a href="{{route('post.show', $post->slug)}}"><img src="{{$post->getImage()}}" alt=""></a>--}}
+                                <a href="{{route('post.show', $post->slug)}}"><img src="{{$post->getImage()}}" alt=""></a>
 
                                 <a href="{{route('post.show', $post->slug)}}" class="post-thumb-overlay text-center">
                                     <div class="text-uppercase text-center">View Post</div>
                                 </a>
                             </div>
                             <div class="post-content">
-                                <header class="entry-header text-center text-uppercase">
+                                <header class="entry-header text-center">
                                     @if($post->hasCategory())
-                                        <h6>
+                                        <h5>
                                             <a href="{{route('category.show', $post->category->slug)}}">
                                                 {{$post->getCategoryTitle()}}
                                             </a>
-                                        </h6>
+                                        </h5>
                                     @endif
 
                                     <h1 class="entry-title">
