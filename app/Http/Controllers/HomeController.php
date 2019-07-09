@@ -13,7 +13,8 @@ class HomeController extends Controller
 
     public function index(){
         $posts = Post::where('status', Post::IS_PUBLIC)->paginate(HomeController::NUMBER_PAGINATION);
-        return view('pages.index', ['posts' => $posts]);
+        $categories = Category::all();
+        return view('pages.index', ['posts' => $posts, 'categories' => $categories]);
     }
 
     public function show($slug)

@@ -3,7 +3,7 @@ body {
 }
 
 .main-menu.navbar-default {
-    background-color: #f5f1ce;
+    background-color: #422109;
 }
 
 .entry-header h1 a {
@@ -23,8 +23,6 @@ aside.widget.news-letter input[name="email"]{
 }
 
 div.post-image {
-    height:375px;
-    background-size: cover;
     border-radius: 20px 20px 0 0;
     -webkit-border-radius: 20px 20px 0 0;
     -moz-border-radius: 20px 20px 0 0;
@@ -46,4 +44,42 @@ article.post .post-thumb a img {
     border-radius: 20px 20px 0 0;
     -webkit-border-radius: 20px 20px 0 0;
     -moz-border-radius: 20px 20px 0 0;
+}
+
+div.posts aside.widget.categories {
+    display: none;
+}
+
+div.primary-sidebar aside.widget.categories {
+    display: block;
+}
+
+@media (min-width: 0px) and (max-width: 400px) and (orientation: portrait) {
+    .entry-header h1 a {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    div.btn-continue-reading {
+        display:none;
+    }
+
+    div.social-share ul {
+        display: none;
+    }
+
+    .post .social-share {
+        padding: 0 0 65px;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 991px) {
+    div.posts aside.widget.categories {
+        display: block;
+    }
+
+    div.primary-sidebar aside.widget.categories {
+        display: none;
+    }
 }
