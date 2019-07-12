@@ -9,6 +9,8 @@
     <title>Blog</title>
 
     <link rel="stylesheet" href="{{ asset('css/front.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/slick/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css?v=' . time()) }}">
     <link rel="icon" type="image/png" href="{{ asset('img/front/favicon.png') }}">
 
@@ -73,6 +75,15 @@
                         </div>
                     @endif
                 </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="carousel">
+                <div><img src="{{ asset('img/front/proga.jpeg') }}"></div>
+                <div><img src="{{ asset('img/front/magento.jpeg') }}"></div>
+                <div><img src="{{ asset('img/front/git.jpeg') }}"></div>
+                <div><img src="{{ asset('img/front/mysql.jpeg') }}"></div>
             </div>
         </div>
 
@@ -243,5 +254,22 @@
     </div>
 
     <script type="text/javascript" src="/js/front.js"></script>
+    <script type="text/javascript" src="{{ asset('plugins/slick/slick.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.carousel').slick({
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                dots: false,
+                infinite: true,
+                speed: 1000,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+    </script>
+
 </body>
 </html>
