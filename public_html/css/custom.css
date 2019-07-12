@@ -54,6 +54,24 @@ div.primary-sidebar aside.widget.categories {
     display: block;
 }
 
+.wrapper{
+    width:100%;
+    padding-top: 20px;
+    text-align:center;
+}
+.carousel{
+    width:90%;
+    margin:0px auto;
+}
+.slick-slide{
+    margin:10px;
+}
+.wrapper img{
+    width:100%;
+    /*height:auto;*/
+    border: 2px solid #fff;
+}
+
 @media (min-width: 0px) and (max-width: 400px) and (orientation: portrait) {
     .entry-header h1 a {
         font-weight: 600;
