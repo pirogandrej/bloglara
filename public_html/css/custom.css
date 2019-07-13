@@ -1,11 +1,35 @@
+/***** main *****/
 body {
     background-color: #f5f1ce;
 }
 
+/***** main-menu *****/
 .main-menu.navbar-default {
     background-color: #422109;
 }
 
+/***** slick-slider *****/
+.wrapper{
+    width:100%;
+    padding-top: 20px;
+    text-align:center;
+}
+
+.carousel{
+    width:62%;
+    margin:0 auto;
+}
+
+.slick-slide{
+    margin:0;
+}
+
+.wrapper img{
+    width:100%;
+    border: 2px solid #fff;
+}
+
+/***** article *****/
 .entry-header h1 a {
     display: block;
 }
@@ -16,10 +40,6 @@ body {
 
 pre code {
     white-space: unset;
-}
-
-aside.widget.news-letter input[name="email"]{
-    width:100%;
 }
 
 div.post-image {
@@ -50,29 +70,51 @@ div.posts aside.widget.categories {
     display: none;
 }
 
+/***** sidebar-widget *****/
+.widget.news-letter input[name="email"]{
+    width:100%;
+}
+
+.widget ul li a {
+     text-transform: none;
+}
+
 div.primary-sidebar aside.widget.categories {
     display: block;
 }
 
-.wrapper{
-    width:100%;
-    padding-top: 20px;
-    text-align:center;
-}
-.carousel{
-    width:90%;
-    margin:0px auto;
-}
-.slick-slide{
-    margin:10px;
-}
-.wrapper img{
-    width:100%;
-    /*height:auto;*/
-    border: 2px solid #fff;
+/***** media 0-991 *****/
+@media (min-width: 0px) and (max-width: 991px) {
+
+    /***** main *****/
+    .main-content {
+        margin-top: 10px;
+    }
+
+    /***** article *****/
+    div.posts aside.widget.categories {
+        display: block;
+    }
+
+    /***** sidebar *****/
+    div.primary-sidebar aside.widget.categories {
+        display: none;
+    }
+
+    /***** slick-slider *****/
+    .wrapper{
+        padding-top: 0;
+    }
+
+    .carousel{
+        width:95%;
+    }
 }
 
+/***** media portrait 0-400 *****/
 @media (min-width: 0px) and (max-width: 400px) and (orientation: portrait) {
+
+    /***** article *****/
     .entry-header h1 a {
         font-weight: 600;
         font-size: 18px;
@@ -90,14 +132,9 @@ div.primary-sidebar aside.widget.categories {
     .post .social-share {
         padding: 0 0 65px;
     }
-}
 
-@media (min-width: 0px) and (max-width: 991px) {
-    div.posts aside.widget.categories {
-        display: block;
-    }
-
-    div.primary-sidebar aside.widget.categories {
-        display: none;
+    /***** slick-slider *****/
+    .carousel{
+        width:92%;
     }
 }
