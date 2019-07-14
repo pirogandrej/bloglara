@@ -83,6 +83,58 @@ div.primary-sidebar aside.widget.categories {
     display: block;
 }
 
+/***** my account image *****/
+
+img.profile-image {
+    width: 20%;
+    border-radius: 50%;
+}
+
+/***** back to top *****/
+
+.back-to-top {
+    display: inline-block;
+    background-color: #3238b9;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 4px 4px 20px 0;
+    color: #777;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s,
+    opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top:after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 45px;
+    color: #fff;
+}
+
+.back-to-top:hover {
+    cursor: pointer;
+    background-color: #5f5aff;
+}
+
+.back-to-top:active {
+    background-color: #555;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
 /***** media 0-991 *****/
 @media (min-width: 0px) and (max-width: 991px) {
 
@@ -108,6 +160,13 @@ div.primary-sidebar aside.widget.categories {
 
     .carousel{
         width:95%;
+    }
+}
+
+/***** media 500-xxx *****/
+@media (min-width: 500px) {
+    .back-to-top {
+        margin: 30px;
     }
 }
 

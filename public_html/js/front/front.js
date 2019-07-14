@@ -242,15 +242,6 @@ function(){this.reset();this.spacer.remove();this.element.removeData("jquery-sti
         });
     }());
 
-    /* === Back To Top === */
-
-    (function () {
-        $(' a.back-to-top').click(function () {
-            $('html, body').animate({scrollTop: 0}, 800);
-            return false;
-        });
-    }());
-
     /* === Footer Instagram === */
 
     (function () {
@@ -289,3 +280,21 @@ $(document).ready(function(){
         cssEase: 'linear'
     });
 });
+
+/* === back-to-top === */
+
+var btn = $('.back-to-top');
+
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+    } else {
+        btn.removeClass('show');
+    }
+});
+
+btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+});
+
