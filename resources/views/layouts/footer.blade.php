@@ -1,3 +1,6 @@
+<!-- Back to top button -->
+<a class="back-to-top"></a>
+
 {{--<div id="footer">--}}
     {{--<div class="footer-instagram-section">--}}
         {{--<h3 class="footer-instagram-title text-center text-uppercase">Instagram</h3>--}}
