@@ -5,7 +5,7 @@ body {
 
 /***** main-menu *****/
 .main-menu.navbar-default {
-    background-color: #422109;
+    background-color: #222222;
 }
 
 /***** slick-slider *****/
@@ -76,7 +76,7 @@ div.posts aside.widget.categories {
 }
 
 .widget ul li a {
-     text-transform: none;
+    text-transform: none;
 }
 
 div.primary-sidebar aside.widget.categories {
