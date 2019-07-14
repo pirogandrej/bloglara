@@ -1,13 +1,15 @@
 
 var mix = require('laravel-mix');
+var publicPath = 'public_html/';
 
-mix
-    .js('resources/js/app.js', 'public/js/app.js')
-    .sass('resources/sass/app.scss', 'public/css/app.css')
-    .sass('resources/sass/custom-admin.scss', 'public/css/custom-admin.css')
+mix.setPublicPath(publicPath)
+
+    .js('resources/js/app.js', 'js/app.js')
+    .sass('resources/sass/app.scss', 'css/app.css')
+    .sass('resources/sass/custom-admin.scss', 'css/custom-admin.css')
 
     .styles([
-        'public/css/app.css',
+        'css/app.css',
         'resources/admin/ionicons/2.0.1/css/ionicons.min.css',
         'resources/admin/dist/css/AdminLTE.min.css',
         'resources/admin/dist/css/skins/_all-skins.min.css',
@@ -15,12 +17,12 @@ mix
         'resources/admin/plugins/datepicker/datepicker3.css',
         'resources/admin/plugins/select2/select2.min.css',
         'resources/admin/plugins/datatables/dataTables.bootstrap.css',
-        'public/css/custom-admin.css'
+        'css/custom-admin.css'
         ],
-        'public/css/admin.css')
+        publicPath + 'css/admin.css')
 
     .scripts([
-        'public/js/app.js',
+        'js/app.js',
         'resources/admin/plugins/slimScroll/jquery.slimscroll.min.js',
         'resources/admin/plugins/fastclick/fastclick.js',
         'resources/admin/dist/js/app.min.js',
@@ -30,40 +32,48 @@ mix
         'resources/admin/plugins/iCheck/icheck.min.js',
         'resources/admin/plugins/datatables/jquery.dataTables.min.js',
         'resources/admin/plugins/datatables/dataTables.bootstrap.min.js',
-        'public/js/scripts-admin.js',
-        'public/js/custom-admin.js'
+        'js/scripts-admin.js',
+        'js/custom-admin.js'
         ],
-        'public/js/admin.js')
+        publicPath + 'js/admin.js')
 
     .version();
 
     // mix.browserSync('blog.loc');
 
-mix.copy('resources/admin/bootstrap/fonts','public/fonts');
-mix.copy('resources/admin/dist/fonts','public/fonts');
-mix.copy('resources/admin/dist/img','public/img/admin');
+// mix.setPublicPath(publicPath).copy('resources/admin/bootstrap/fonts', publicPath + 'fonts');
+// mix.setPublicPath(publicPath).copy('resources/admin/dist/fonts', publicPath + 'fonts');
+// mix.setPublicPath(publicPath).copy('resources/admin/dist/img', publicPath + 'img/admin');
 
-mix.styles([
-    'resources/front/css/bootstrap.min.css',
-    'resources/front/css/font-awesome.min.css',
-    'resources/front/css/animate.min.css',
-    'resources/front/css/owl.carousel.css',
-    'resources/front/css/owl.theme.css',
-    'resources/front/css/owl.transitions.css',
-    'resources/front/css/style.css',
-    'resources/front/css/responsive.css'
-],'public/css/front.css');
+mix.setPublicPath(publicPath)
 
-mix.scripts([
-    'resources/front/js/jquery-1.11.3.min.js',
-    'resources/front/js/bootstrap.min.js',
-    'resources/front/js/owl.carousel.min.js',
-    'resources/front/js/jquery.stickit.min.js',
-    'resources/front/js/menu.js',
-    'resources/front/js/scripts.js'
-], 'public/js/front.js');
+    .styles([
+        'resources/front/css/bootstrap.min.css',
+        'resources/front/css/font-awesome.min.css',
+        'resources/front/css/animate.min.css',
+        'resources/front/css/owl.carousel.css',
+        'resources/front/css/owl.theme.css',
+        'resources/front/css/owl.transitions.css',
+        'resources/front/css/style.css',
+        'resources/front/css/responsive.css',
+        publicPath + 'plugins/slick/slick.css',
+        publicPath + 'css/front/custom-with-mix.css',
+    ],
+        publicPath + 'css/front.css')
 
-mix.copy('resources/front/fonts', 'public/fonts');
-mix.copy('resources/front/images', 'public/img/front');
+    .scripts([
+        'resources/front/js/jquery-1.11.3.min.js',
+        'resources/front/js/bootstrap.min.js',
+        'resources/front/js/owl.carousel.min.js',
+        'resources/front/js/jquery.stickit.min.js',
+        'resources/front/js/menu.js',
+        publicPath + 'plugins/slick/slick.min.js',
+        'resources/front/js/scripts.js',
+        publicPath + 'js/front/custom-with-mix.js',
+    ],
+        publicPath + 'js/front/front.js')
 
+    .version();
 
+// mix.setPublicPath(publicPath).copy('resources/front/fonts', publicPath + 'fonts');
+// mix.setPublicPath(publicPath).copy('resources/front/images', publicPath + 'img/front');
