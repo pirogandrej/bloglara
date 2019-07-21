@@ -10,8 +10,3 @@ $(function () {
         radioClass: 'iradio_minimal-blue'
     });
 });
-
-$(document).ready(function () {
-    var editor = window.CKEDITOR.replaceAll();
-    CKFinder.setupCKEditor( editor );
-});
