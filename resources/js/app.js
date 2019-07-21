@@ -1,6 +1,6 @@
 
 require('./bootstrap');
-require('prismjs');
+// require('prismjs');
 
 window.Vue = require('vue');
 window.Vuex = require('vuex');

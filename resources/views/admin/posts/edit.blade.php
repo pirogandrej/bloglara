@@ -88,7 +88,15 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Полный текст</label>
-                                <textarea id="" cols="30" rows="10" class="form-control" name="content">{{$post->content}}</textarea>
+                                <textarea
+                                        id="content"
+                                        name="content"
+                                        data-sample-preservewhitespace
+                                        cols="30"
+                                        rows="10"
+                                        class="form-control">
+                                    {{$post->content}}
+                                </textarea>
                             </div>
                         </div>
 
@@ -103,4 +111,17 @@
             {{Form::close()}}
 
         </section>
-    </div>@endsection
+    </div>
+@endsection
+
+@section('scripts')
+    <script>
+        hljs.initHighlightingOnLoad();
+        var config = {
+            extraPlugins: 'codesnippet',
+            codeSnippet_theme: 'monokai_sublime',
+            height: 356
+        };
+        CKEDITOR.replace('content', config);
+    </script>
+@endsection

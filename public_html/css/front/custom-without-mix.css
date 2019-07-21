@@ -1,0 +1,8 @@
+code[class*="language-"] {
+    background-color: #222222;
+    box-shadow: -0.3em 0 0 0.3em #222222, 0.3em 0 0 0.3em #222222;
+}
+pre[class*="language-"] {
+    background: none;
+    background-color:#222222;
+}
