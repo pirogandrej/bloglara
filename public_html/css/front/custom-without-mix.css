@@ -6,3 +6,14 @@ pre[class*="language-"] {
     background: none;
     background-color:#222222;
 }
+article.post h5 a:hover{
+    text-decoration: none;
+    font-size: 17px;
+    color: #0e78ff;
+}
+
+article.post h5 a{
+    text-decoration: none;
+    font-size: 17px;
+    color: #13499c;
+}

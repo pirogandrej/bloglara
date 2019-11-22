@@ -14,18 +14,16 @@
                             </a>
                         </div>
                         <div class="post-content">
-                            <header class="entry-header text-center text-uppercase">
+                            <header class="entry-header text-center">
                                 @if($post->hasCategory())
-                                    <h6>
+                                    <h5>
                                         <a href="{{route('category.show', $post->category->slug)}}">
                                             {{$post->getCategoryTitle()}}
                                         </a>
-                                    </h6>
+                                    </h5>
                                 @endif
                                 <h1 class="entry-title">
-                                    <a href="{{route('post.show', $post->slug)}}">
-                                        {{$post->title}}
-                                    </a>
+                                    {{$post->title}}
                                 </h1>
                             </header>
                             <div class="entry-content">
