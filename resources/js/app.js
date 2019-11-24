@@ -1,6 +1,5 @@
 
 require('./bootstrap');
-// require('prismjs');
 
 window.Vue = require('vue');
 window.Vuex = require('vuex');
@@ -18,7 +17,6 @@ const store = new Vuex.Store(StoreData);
 const app = new Vue({
     el: '#app'
 });
-
 
 
 

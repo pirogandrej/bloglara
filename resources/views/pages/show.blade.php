@@ -9,9 +9,7 @@
 
                     <article class="post">
                         <div class="post-thumb">
-                            <a href="{{route('post.show', $post->slug)}}">
-                                <img src="{{$post->getImage()}}" alt="">
-                            </a>
+                            <img src="{{$post->getImage()}}" alt="article image">
                         </div>
                         <div class="post-content">
                             <header class="entry-header text-center">
