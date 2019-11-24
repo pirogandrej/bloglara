@@ -56,7 +56,6 @@ mix.setPublicPath(publicPath)
         'resources/front/css/owl.transitions.css',
         'resources/front/css/style.css',
         'resources/front/css/responsive.css',
-        'resources/front/css/prism-funky.css',
         publicPath + 'plugins/slick/slick.css',
         publicPath + 'css/front/custom-with-mix.css',
     ],
@@ -68,9 +67,8 @@ mix.setPublicPath(publicPath)
         'resources/front/js/owl.carousel.min.js',
         'resources/front/js/jquery.stickit.min.js',
         'resources/front/js/menu.js',
-        'resources/front/js/prism.js',
-        publicPath + 'plugins/slick/slick.min.js',
         'resources/front/js/scripts.js',
+        publicPath + 'plugins/slick/slick.min.js',
         publicPath + 'js/front/custom-with-mix.js',
     ],
         publicPath + 'js/front/front.js')
